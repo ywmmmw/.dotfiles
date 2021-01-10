@@ -1,5 +1,0 @@
-xrdb -merge ~/.Xresources
-if [ -f $HOME/.Xmodmap ]; then
-    /usr/bin/xmodmap $HOME/.Xmodmaprc
-fi
-exec i3
