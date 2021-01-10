@@ -1,0 +1,36 @@
+(setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+                         ("melpa" . "https://elpa.emacs-china.org/melpa/")))
+
+(package-initialize)
+
+(eval-when-compile
+  ;; Following line is not needed if use-package.el is in ~/.emacs.d
+  ;; (add-to-list 'load-path "~/.emacs.d/")
+  (add-to-list 'load-path "~/.emacs.d/lisp/")
+  (require 'use-package))
+
+
+;; 内置功能调整
+(require 'init-builtin)
+
+;; 样式
+(require 'init-theme)
+
+;; 插件包
+(require 'init-packages)
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/" t)))
+ '(backup-directory-alist '((".*" . "~/.emacs.d/backups/")))
+ '(package-selected-packages '(flycheck use-package restclient counsel company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -1,0 +1,59 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 1
+}
+
+order += "volume master"
+# order += "read_file proxy"
+order += "wireless wlan0"
+order += "cpu_usage"
+order += "memory"
+order += "battery 0"
+order += "time"
+
+wireless wlan0 {
+    format_up = "W:%essid(%quality)"
+    format_down = "W:Down"
+}
+
+battery 0 {
+    format = "%status:%percentage"
+    format_down = "No BAT"
+    status_chr = "CHR"
+    status_bat = "BAT"
+    status_unk = "UNK"
+    status_full = "FULL"
+    low_threshold = 10
+    last_full_capacity = true
+    integer_battery_capacity = true
+}
+
+cpu_usage {
+    format = "CPU:%usage"
+}
+
+memory {
+    format = "Mem:%percentage_used"
+}
+
+time {
+    format = "%Y-%m-%d %H:%M"
+}
+
+volume master {
+    format = "VOL:%volume"
+    format_muted = "VOL:MUTED"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+read_file proxy {
+    path = /home/ywmmmw/.my_proxy.pid
+    format = "PROXY:%content"
+    format_bad = "PROXY:ERROR"
+}
+
+
+
