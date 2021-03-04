@@ -16,6 +16,10 @@
 ;; undo-tree
 (require 'init-undo)
 
+;; find-file-in-project
 (require 'init-ffip)
+
+;; php
+(require 'init-php)
 
 (provide 'init-packages)
