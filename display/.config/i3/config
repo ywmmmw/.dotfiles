@@ -26,6 +26,9 @@ exec --no-startup-id feh --bg-scale ~/.wallpapers/wallpaper.jpg
 
 exec --no-startup-id qv2ray
 
+# 配置进了x confg里，不需要额外的插件了
+# exec --no-startup-id imwheel -k
+
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status
 
