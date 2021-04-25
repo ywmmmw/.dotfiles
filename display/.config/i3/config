@@ -37,6 +37,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
+# 自动静音
+exec --no-startup-id amixer set Master mute
+
 # adjust screen backlight
 # bindsym XF86MonBrightnessDown exec --no-startup-id macbook-lighter-screen -d 100
 # bindsym XF86MonBrightnessUp exec --no-startup-id macbook-lighter-screen -i 100
@@ -49,6 +52,9 @@ bindsym XF86KbdBrightnessUp exec --no-startup-id macbook-lighter-kbd -i 100
 
 # lock screen
 bindsym $mod+l exec mantablockscreen
+
+# screen shot
+bindsym $mod+p exec scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Images/Shots/'
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -170,7 +176,10 @@ new_window pixel 0
 
 # window gap
 gaps outer 5
+gaps inner 5
 gaps bottom 5
+
+smart_gaps on
 
 # screen timeout
 exec --no-startup-id xset dpms 600 800 900

@@ -22,3 +22,5 @@ function myproxy_off
 end
 
 alias emc="emacs -nw"
+
+fish_add_path $HOME/.config/composer/vendor/bin/
