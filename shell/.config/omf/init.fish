@@ -24,3 +24,7 @@ end
 alias emc="emacs -nw"
 
 fish_add_path $HOME/.config/composer/vendor/bin/
+
+set -Ux ALTERNATE_EDITOR ""
+set -Ux EDITOR "emacsclient -t"                  # $EDITOR opens in terminal
+set -Ux VISUAL "emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
