@@ -1,3 +1,3 @@
 xrdb -merge ~/.Xresources
-/usr/bin/xmodmap $HOME/.Xmodmaprc
+/usr/bin/xmodmap ~/.Xmodmap
 exec i3
