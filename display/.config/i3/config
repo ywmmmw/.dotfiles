@@ -22,7 +22,7 @@ exec --no-startup-id fcitx5
 exec --no-startup-id xbacklight -set 15%
 
 # set wallpapers
-exec --no-startup-id feh --bg-scale ~/.wallpapers/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/.wallpapers/wallpaper.png
 
 exec --no-startup-id qv2ray
 
@@ -48,7 +48,7 @@ bindsym XF86KbdBrightnessDown exec --no-startup-id macbook-lighter-kbd -d 100
 bindsym XF86KbdBrightnessUp exec --no-startup-id macbook-lighter-kbd -i 100
 
 # lock screen
-bindsym $mod+l exec mantablockscreen
+bindsym $mod+l exec betterlockscreen -l
 
 # screen shot
 bindsym $mod+p exec scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Images/Shots/'

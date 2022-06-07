@@ -1,4 +1,3 @@
-
 # Start X at login
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
@@ -9,22 +8,15 @@ end
 set fish_emoji_width 2
 set fish_ambiguous_width 2
 
-function myproxy_on
-    set -Ux http_proxy "http://127.0.0.1:8889"
-    set -Ux https_proxy "http://127.0.0.1:8889"
-    echo "ON" > ~/.my_proxy.pid
-end
+# fish_add_path $HOME/.config/composer/vendor/bin/
 
-function myproxy_off
-    set -e http_proxy
-    set -e https_proxy
-    echo "OFF" > ~/.my_proxy.pid
-end
+# set emacs server and alias
 
-alias emc="emacs -nw"
+set -x ALTERNATE_EDITOR ""
 
-fish_add_path $HOME/.config/composer/vendor/bin/
-
-set -Ux ALTERNATE_EDITOR ""
-set -Ux EDITOR "emacsclient -t"                  # $EDITOR opens in terminal
-set -Ux VISUAL "emacsclient -c -a emacs"         # $VISUAL opens in GUI mode
+# $EDITOR opens in terminal
+set -x EDITOR "emacsclient -t -a emacs"
+# $VISUAL opens in GUI mode
+set -x VISUAL "emacsclient -c -a emacs"
+alias emc="emacsclient -c"
+alias emcnw="emacsclient -c -t"
